@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UISwitch *doneSwitch;
+@property (weak, nonatomic) IBOutlet UITextField *dueDateTextField;
 
 
 @end

@@ -23,6 +23,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.title = @"Things to do!";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,8 +49,9 @@
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     [newManagedObject setValue:@"" forKey:@"title"];
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
     [newManagedObject setValue: @NO forKey:@"done"];
+    
+    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
         
     // Save the context.
     NSError *error = nil;
@@ -116,7 +118,21 @@
 
 - (void)configureCell:(UITableViewCell *)cell withObject:(NSManagedObject *)object {
     cell.textLabel.text = [object valueForKey:@"title"];
-    cell.detailTextLabel.text = [[object valueForKey:@"timeStamp"]description];
+    
+    NSDate *myDate = [object valueForKey:@"timeStamp"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"EEEE MMMM d,YYYY h:mm a"];
+    NSString *finalDate = [formatter stringFromDate:myDate];
+    cell.detailTextLabel.text = finalDate;
+    
+    BOOL doneBool = [[object valueForKey:@"done"]boolValue];
+    
+    if (doneBool == YES) {
+        cell.backgroundColor = [UIColor greenColor];
+    }else{
+        cell.backgroundColor = [UIColor redColor];
+    }
+    
 }
 
 #pragma mark - Fetched results controller
@@ -210,7 +226,6 @@
 }
 
 -(void)detailChangedObject {
-
     
     [self.tableView reloadData];
 }

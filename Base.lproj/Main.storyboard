@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6k-vJ-0aI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="q6k-vJ-0aI">
                                 <rect key="frame" x="150" y="285" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fss-3K-6hw"/>
@@ -42,21 +42,41 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSM-aN-EgR">
-                                <rect key="frame" x="416" y="323" width="34" height="30"/>
+                                <rect key="frame" x="416" y="361" width="34" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="OFX-Va-mzF"/>
-                                    <constraint firstAttribute="height" constant="30" id="hmh-Cz-1ol"/>
+                                    <constraint firstAttribute="width" constant="34" id="NWq-yE-ZeG"/>
+                                    <constraint firstAttribute="height" constant="30" id="jxz-3z-fDu"/>
                                 </constraints>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="jyu-zv-fn5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCz-0j-Ulp">
-                                <rect key="frame" x="360" y="323" width="48" height="30"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-nE-hP2">
+                                <rect key="frame" x="276" y="246" width="51" height="31"/>
+                                <connections>
+                                    <action selector="doneSwitchTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="bA7-nj-7LC"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do  ➞  Done          " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AD-Tf-5hv">
+                                <rect key="frame" x="219" y="217" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XUe-Zr-dv9">
+                                <rect key="frame" x="150" y="323" width="300" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="JdZ-8k-SHD"/>
-                                    <constraint firstAttribute="height" constant="30" id="TF2-MU-yQn"/>
+                                    <constraint firstAttribute="height" constant="30" id="Kxh-mi-H7J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCz-0j-Ulp">
+                                <rect key="frame" x="360" y="361" width="48" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1G7-Il-RN7"/>
+                                    <constraint firstAttribute="width" constant="48" id="JGc-8Y-4DA"/>
                                 </constraints>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.32343284589999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,31 +85,22 @@
                                     <action selector="cancelButtonTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="AWQ-JB-9Nd"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzF-nE-hP2">
-                                <rect key="frame" x="276" y="246" width="51" height="31"/>
-                                <connections>
-                                    <action selector="doneSwitchTapped:" destination="JEX-9P-axG" eventType="touchUpInside" id="bA7-nj-7LC"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check when done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AD-Tf-5hv">
-                                <rect key="frame" x="229" y="217" width="143" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eCz-0j-Ulp" firstAttribute="top" secondItem="q6k-vJ-0aI" secondAttribute="bottom" constant="8" id="0t0-pa-t4z"/>
-                            <constraint firstItem="wzF-nE-hP2" firstAttribute="top" secondItem="7AD-Tf-5hv" secondAttribute="bottom" constant="8" id="0x0-pm-ayz"/>
+                            <constraint firstItem="eCz-0j-Ulp" firstAttribute="top" secondItem="XUe-Zr-dv9" secondAttribute="bottom" constant="8" id="44m-cJ-pu4"/>
+                            <constraint firstItem="XUe-Zr-dv9" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="5yH-ct-pw9"/>
+                            <constraint firstItem="wzF-nE-hP2" firstAttribute="top" secondItem="7AD-Tf-5hv" secondAttribute="bottom" constant="8" id="Bd8-rb-DLw"/>
                             <constraint firstItem="wzF-nE-hP2" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="PN3-0S-uw7"/>
-                            <constraint firstItem="BSM-aN-EgR" firstAttribute="top" secondItem="q6k-vJ-0aI" secondAttribute="bottom" constant="8" id="Pzv-tT-iDp"/>
-                            <constraint firstItem="BSM-aN-EgR" firstAttribute="trailing" secondItem="q6k-vJ-0aI" secondAttribute="trailing" id="W2C-1C-Eqz"/>
+                            <constraint firstItem="BSM-aN-EgR" firstAttribute="leading" secondItem="eCz-0j-Ulp" secondAttribute="trailing" constant="8" id="SMS-8k-sLr"/>
+                            <constraint firstItem="BSM-aN-EgR" firstAttribute="trailing" secondItem="XUe-Zr-dv9" secondAttribute="trailing" id="XvT-SJ-4Vm"/>
+                            <constraint firstItem="XUe-Zr-dv9" firstAttribute="width" secondItem="q6k-vJ-0aI" secondAttribute="width" id="Yg2-LS-AcY"/>
                             <constraint firstItem="q6k-vJ-0aI" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Z6e-Zz-USn"/>
+                            <constraint firstItem="BSM-aN-EgR" firstAttribute="top" secondItem="XUe-Zr-dv9" secondAttribute="bottom" constant="8" id="bJi-Ly-x2O"/>
                             <constraint firstItem="q6k-vJ-0aI" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" multiplier="0.5" id="eJx-l1-pkM"/>
-                            <constraint firstItem="BSM-aN-EgR" firstAttribute="leading" secondItem="eCz-0j-Ulp" secondAttribute="trailing" constant="8" id="kAc-GT-yuO"/>
+                            <constraint firstItem="7AD-Tf-5hv" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="mXV-kk-pOs"/>
+                            <constraint firstItem="XUe-Zr-dv9" firstAttribute="top" secondItem="q6k-vJ-0aI" secondAttribute="bottom" constant="8" id="oB7-TI-mUf"/>
                             <constraint firstItem="q6k-vJ-0aI" firstAttribute="top" secondItem="wzF-nE-hP2" secondAttribute="bottom" constant="8" id="pxC-AY-Yfd"/>
-                            <constraint firstItem="7AD-Tf-5hv" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="rAl-MF-Vst"/>
                             <constraint firstItem="q6k-vJ-0aI" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="thr-LK-Awq"/>
                         </constraints>
                     </view>
@@ -99,6 +110,7 @@
                         <outlet property="cancelButton" destination="eCz-0j-Ulp" id="Tit-dc-j2q"/>
                         <outlet property="detailTextField" destination="q6k-vJ-0aI" id="xV0-2C-N48"/>
                         <outlet property="doneSwitch" destination="wzF-nE-hP2" id="2Am-Pi-bcc"/>
+                        <outlet property="dueDateTextField" destination="XUe-Zr-dv9" id="EzY-lK-B1L"/>
                         <outlet property="saveButton" destination="BSM-aN-EgR" id="t4t-Xa-mMK"/>
                     </connections>
                 </viewController>
